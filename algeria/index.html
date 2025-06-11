@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="This website collects and shares global public DNS servers, IPv4 or IPv6 addresses from over 160 countries.">
+    <meta name="keywords" content="PublicDNS,FreeDNS, Public DNS servers, DNS servers, IPv4,IPv6">
+    <title>Algeria DNS - 29DNS</title>
+    <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.3.2/css/flag-icons.min.css" media="all">
+</head>
+<body>
+<header id="header"></header>
+<main class="container" style="margin-top:60px">
+<section class="cname-table-wrapper">
+    <div class="cname-table-header">
+        <h2>Algeria DNS</h2>
+     </div>
+     <table>
+          <thead>
+             <tr>
+              <th><h3>IP</h3></th>
+              <th><h3>ASN</h3></th>
+              <th><h3>Country</h3></th>
+              <th><h3>City</h3></th>
+              <th><h3>Reliability</h3></th>
+              <th><h3>Speed</h3></th>
+             </tr>
+        </thead>
+<tbody>
+<tr>
+    <td data-label="IP" class="ip">80.249.64.18</td>
+    <td data-label="ASN">AS36947 Telecom Algeria</td>
+    <td data-label="Country"><span class="fi fi-dz"></span> Algeria</td>
+    <td data-label="City">Reghaia</td>
+    <td data-label="Reliability">100 %</td>
+    <td data-label="Speed" class="speed">94.13 ms</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">80.246.15.4</td>
+    <td data-label="ASN">AS21391 Algerian Broadcasting (Tele Diffusion d'Algerie TDA)</td>
+    <td data-label="Country"><span class="fi fi-dz"></span> Algeria</td>
+    <td data-label="City">'Ain Merane</td>
+    <td data-label="Reliability">100 %</td>
+    <td data-label="Speed" class="speed">167.75 ms</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">80.249.72.60</td>
+    <td data-label="ASN">AS36947 Telecom Algeria</td>
+    <td data-label="Country"><span class="fi fi-dz"></span> Algeria</td>
+    <td data-label="City">Reghaia</td>
+    <td data-label="Reliability">100 %</td>
+    <td data-label="Speed" class="speed">150.58 ms</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">41.111.135.226</td>
+    <td data-label="ASN">AS36947 Telecom Algeria</td>
+    <td data-label="Country"><span class="fi fi-dz"></span> Algeria</td>
+    <td data-label="City">Belcourt</td>
+    <td data-label="Reliability">100 %</td>
+    <td data-label="Speed" class="speed">191.91 ms</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">41.111.204.186</td>
+    <td data-label="ASN">AS36947 Telecom Algeria</td>
+    <td data-label="Country"><span class="fi fi-dz"></span> Algeria</td>
+    <td data-label="City">Belcourt</td>
+    <td data-label="Reliability">100 %</td>
+    <td data-label="Speed" class="speed">240.81 ms</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">41.110.223.6</td>
+    <td data-label="ASN">AS36947 Telecom Algeria</td>
+    <td data-label="Country"><span class="fi fi-dz"></span> Algeria</td>
+    <td data-label="City">Belcourt</td>
+    <td data-label="Reliability">98.02 %</td>
+    <td data-label="Speed" class="speed">669.47 ms</td>
+</tr>
+</tbody>
+    </table>
+</section>
+<section id="country"></section>
+</main>
+<footer id="footer"></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$('#header').load('../header.html', function(response, status, xhr) {
+  if (status === "error") {
+    console.error("Load Fail");
+  }
+});
+$('#country').load('../country.html', function(response, status, xhr) {
+  if (status === "error") {
+    console.error("Load Fail");
+  }
+});
+$('#footer').load('../footer.html', function(response, status, xhr) {
+        if (status === "error") {
+            console.error("Load Fail");
+        } else {
+            var currentYear = new Date().getFullYear();
+            $('#footer #currentYear').text(currentYear);
+        }
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const ipElements = document.querySelectorAll('.ip');
+
+    ipElements.forEach(ipElem => {
+        const ipAddress = ipElem.textContent.trim();
+        const parentRow = ipElem.closest('tr');
+        const speedDisplay = parentRow.querySelector('.speed');
+
+        const isIPv6 = /^([a-fA-F0-9:]+:+)+[a-fA-F0-9]+$/.test(ipAddress);
+        const formattedIP = isIPv6 ? `[${ipAddress}]` : ipAddress;
+        const protocol = window.location.protocol === 'https:' ? 'https://' : 'http://';
+        const testURL = `${protocol}${formattedIP}/favicon.ico?r=${Math.random()}`;
+
+        const startTime = performance.now();
+        speedDisplay.textContent = 'Loading...';
+
+        const img = new Image();
+        let isLoaded = false;
+
+        const timeoutId = setTimeout(() => {
+            if (!isLoaded) {
+                isLoaded = true;
+                speedDisplay.textContent = 'Timeout';
+                console.warn(`Request timed out for ${ipAddress}`);
+            }
+        }, 5000);
+
+        img.onload = img.onerror = () => {
+            if (isLoaded) return;
+            clearTimeout(timeoutId);
+            isLoaded = true;
+            const latency = Math.round(performance.now() - startTime);
+            speedDisplay.textContent = `${latency} ms`;
+        };
+
+        img.src = testURL;
+    });
+});
+</script>
+<div id="scrollTop" title="Back to top">TOP</div>
+<script>
+const scrollTopBtn = document.getElementById("scrollTop");
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+window.addEventListener('scroll', () => {
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollPosition > 0) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="This website collects and shares global public DNS servers, IPv4 or IPv6 addresses from over 160 countries.">
+    <meta name="keywords" content="PublicDNS,FreeDNS, Public DNS servers, DNS servers, IPv4,IPv6">
+    <title>About - 29DNS</title>
+    <link rel="stylesheet" href="../css/style.css">
+	<style>
+	.main-content-card {margin-bottom:var(--space-8);padding:var(--space-6);border-radius:var(--border-radius-lg);background-color:rgba(var(--glass-bg-rgb),var(--glass-bg-alpha));backdrop-filter:blur(var(--blur-intensity));-webkit-backdrop-filter:blur(var(--blur-intensity));border:var(--border-width) solid var(--glass-border);box-shadow:var(--shadow-md);transition:var(--transition-colors),var(--transition-backdrop);padding-top:var(--space-8);padding-bottom:var(--space-8);}
+.main-content-card h1 {margin-bottom:var(--space-6);font-size:1.5rem;color:var(--text-primary);text-align:center;font-size:2rem;}
+.about-section {margin-bottom:var(--space-6);}
+.about-section h2 {font-size:1.5rem;color:var(--text-primary);margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--glass-border);}
+.about-section p {font-size:1rem;line-height:1.8;color:var(--text-secondary);max-width:none;}
+.about-section ul {list-style:disc;padding-left:var(--space-5);margin-bottom:var(--space-4);}
+.about-section li {margin-bottom:var(--space-3);line-height:1.8;color:var(--text-secondary);}
+	</style>
+</head>
+<body>
+<header id="header"></header>
+<main class="container" style="margin-top:60px">
+<div class="main-content-card">
+            <h1>About 29DNS</h1>
+            <section class="about-section">
+                <p>29DNS is a public welfare website used for collecting and sharing global public DNS servers.</p>
+            </section>
+            <section class="about-section">
+                <h2>What We Do</h2>
+                <ul>
+                    <li>Collect and share global public DNS servers, IPv4 or IPv6 addresses from over 160 countries.</li>
+                    <li>Monitor the availability and performance of DNS servers, and provide real-time data references.</li>
+                    <li>Provide services such as IP address attribution inquiry.</li>
+                </ul>
+            </section>
+            <section class="about-section">
+                <h2>What is a Public DNS Server?</h2>
+                <p>A Public DNS Server is one that has a lot of information about which website is hosted on which IP. When DNS resolves a website to an IP address it might have to ask multiple servers. The Public DNS Servers keep information about which other servers down the lane needs to be asked.</p>
+				<p>Your computer uses a Public DNS Server (if your ISP does not interfere with this) to assist you with opening your favorite websites. Using a Public DNS Server is reliable and highly encouraged as it will also speed up (to a minor degree) your browsing experience.</p>
+            </section>
+             <section class="about-section">
+                 <h2>Contact Us</h2>
+                 <p>If you have any questions, suggestions, or intentions to cooperate, please contact us.</p>
+				 <p>Email:www@29dns.com</p>
+             </section>
+        </div>
+</main>
+<footer id="footer"></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$('#header').load('../header.html', function(response, status, xhr) {
+  if (status === "error") {
+    console.error("Load Fail");
+  }
+});
+$('#footer').load('../footer.html', function(response, status, xhr) {
+        if (status === "error") {
+            console.error("Load Fail");
+        } else {
+            var currentYear = new Date().getFullYear();
+            $('#footer #currentYear').text(currentYear);
+        }
+    });
+</script>
+<div id="scrollTop" title="Back to top">TOP</div>
+<script>
+const scrollTopBtn = document.getElementById("scrollTop");
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+window.addEventListener('scroll', () => {
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollPosition > 0) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+</script>
+</body>
+</html>
