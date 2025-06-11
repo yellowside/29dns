@@ -1,0 +1,13 @@
+﻿<div id="copy"><p class="width_center"><a href="../about/">About</a> · <a href="../about/terms.html">Terms</a> · <a id="translate">Language</a></p></div>
+<div id="ba"><p class="width_center">&copy; 2012-<span id="currentYear"></span> 29DNS, All Rights Reserved.</p></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/translate.js/3.15.6/translate.min.js" integrity="sha512-jV56uXWcYgmQGOaOGj1Kgr37Ua5tvO7/413JR9uJJzUn05USH0zqbpMtF9J4zvKTtnc9cDPlp4nE3uWNXT9dhQ==" crossorigin="anonymous"></script>
+<script>
+$('#translate').on('click', function() {
+    if (translate.language.getLocal() === 'english') {
+        translate.language.setLocal('chinese');
+    } else {
+        translate.language.setLocal('english');
+    }
+    translate.execute();
+});
+</script>

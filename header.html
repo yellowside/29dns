@@ -1,0 +1,53 @@
+﻿<nav class="header">
+    <div class="fh_row">
+        <div class="fh_logo"><a href="../" target="_self"><img src="../images/logo.svg"></a></div>
+        <div class="language_icon"><a href="https://29dns.cn/" target="_self">CN</a></div>
+		<div class="m_menu"><span class="trans-3"></span><span class="trans-3"></span><span class="trans-3"></span></div>
+        <div class="site_menu">
+            <ul>
+                <li><a href="../" target="_self">Home</a></li>
+                <li class="dropdown"><a>Continent</a>
+                    <ul>
+                        <li><a href="../africa/" target="_self">Africa</a></li>
+                        <li><a href="../asia/" target="_self">Asia</a></li>
+                        <li><a href="../europe/" target="_self">Europe</a></li>
+                        <li><a href="../northamerica/" target="_self">North America</a></li>
+                        <li><a href="../oceania/" target="_self">Oceania</a></li>
+                        <li><a href="../southamerica/" target="_self">South America</a></li>
+                    </ul>
+                </li>
+				<li><a href="../country/" target="_self">Country</a></li>
+				<li><a href="https://www.bingdou.cc/" target="_blank" rel="nofollow">Tool</a></li>
+                <li><a href="https://ftpweb.net/" target="_blank" rel="nofollow">Online FTP</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+$(document).ready(function(){
+    $('.m_menu').click(function(){
+        $(this).toggleClass('on');
+        $('.site_menu').slideToggle();
+        $('body').css("overflow", function() {
+            return ($(this).css("overflow") === "hidden" ? "auto" : "hidden");
+        });
+    });
+    $('.dropdown').hover(
+        function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $(this).find('ul').stop(true, true).delay(100).fadeIn(200);
+        },
+        function () {
+            $(this).removeClass('active');
+            $(this).find('ul').stop(true, true).fadeOut(100);
+        }
+    );
+    $('.dropdown > a').on('click', function(e) {
+        if ($(window).width() <= 992) {
+            e.preventDefault();
+            $(this).parent().toggleClass('active').siblings().removeClass('active');
+            $(this).parent().find('ul').stop(true, true).slideToggle();
+        }
+    });
+});
+</script>

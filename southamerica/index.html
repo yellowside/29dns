@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="This website collects and shares global public DNS servers, IPv4 or IPv6 addresses from over 160 countries.">
+    <meta name="keywords" content="PublicDNS,FreeDNS, Public DNS servers, DNS servers, IPv4,IPv6">
+    <title>South America DNS - 29DNS</title>
+    <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.3.2/css/flag-icons.min.css" media="all">
+</head>
+<body>
+<header id="header"></header>
+<main class="container" style="margin-top:60px">
+<section class="cname-table-wrapper">
+    <div class="cname-table-header">
+        <h2>South America DNS</h2>
+     </div>
+     <table>
+          <thead>
+             <tr>
+              <th><h3>IP</h3></th>
+              <th><h3>ASN</h3></th>
+              <th><h3>Country</h3></th>
+              <th><h3>City</h3></th>
+             </tr>
+        </thead>
+<tbody>
+<tr>
+    <td data-label="IP" class="ip">190.151.144.21</td>
+    <td data-label="ASN">AS52339 Lima Video Cable S.A. (Cabletel)</td>
+    <td data-label="Country"><span class="fi fi-ar"></span> Argentina</td>
+    <td data-label="City">Zárate</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">167.157.20.2</td>
+    <td data-label="ASN">AS6568 Entel S.A. - EntelNet</td>
+    <td data-label="Country"><span class="fi fi-bo"></span> Bolivia</td>
+    <td data-label="City">Cochabamba</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">45.230.253.29</td>
+    <td data-label="ASN">AS267181 top connect tecnologia ltda</td>
+    <td data-label="Country"><span class="fi fi-br"></span> Brazil</td>
+    <td data-label="City">Itaitinga</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">170.239.84.247</td>
+    <td data-label="ASN">AS52368 ZAM LTDA.</td>
+    <td data-label="Country"><span class="fi fi-cl"></span> Chile</td>
+    <td data-label="City">Curicó</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">181.143.64.82</td>
+    <td data-label="ASN">AS13489 EPM Telecomunicaciones S.A. E.S.P.</td>
+    <td data-label="Country"><span class="fi fi-co"></span> Colombia</td>
+    <td data-label="City">Bello</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">45.71.185.100</td>
+    <td data-label="ASN">AS264668 NEDETEL S.A.</td>
+    <td data-label="Country"><span class="fi fi-ec"></span> Ecuador</td>
+    <td data-label="City">Guabo</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">81.248.42.55</td>
+    <td data-label="ASN">AS3215 Orange S.A.</td>
+    <td data-label="Country"><span class="fi fi-gf"></span> French Guiana</td>
+    <td data-label="City">Cayenne</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">201.222.52.6</td>
+    <td data-label="ASN">AS28103 TECNOLOGIA EN ELECTRONICA E INFORMATICA SOCIEDAD ANONIMA (T.E.I.S.A)</td>
+    <td data-label="Country"><span class="fi fi-py"></span> Paraguay</td>
+    <td data-label="City">Asunción</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">209.45.50.157</td>
+    <td data-label="ASN">AS262253 ECONOCABLE MEDIA SAC</td>
+    <td data-label="Country"><span class="fi fi-pe"></span> Peru</td>
+    <td data-label="City">Lima</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">200.125.37.90</td>
+    <td data-label="ASN">AS6057 Administracion Nacional de Telecomunicaciones</td>
+    <td data-label="Country"><span class="fi fi-uy"></span> Uruguay</td>
+    <td data-label="City">Punta del Este</td>
+</tr>
+<tr>
+    <td data-label="IP" class="ip">200.75.135.226</td>
+    <td data-label="ASN">AS11562 Net Uno, C.A.</td>
+    <td data-label="Country"><span class="fi fi-ve"></span> Venezuela</td>
+    <td data-label="City">Caracas</td>
+</tr>
+</tbody>
+    </table>
+</section>
+<section id="country"></section>
+</main>
+<footer id="footer"></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$('#header').load('../header.html', function(response, status, xhr) {
+  if (status === "error") {
+    console.error("Load Fail");
+  }
+});
+$('#country').load('../country.html', function(response, status, xhr) {
+  if (status === "error") {
+    console.error("Load Fail");
+  }
+});
+$('#footer').load('../footer.html', function(response, status, xhr) {
+        if (status === "error") {
+            console.error("Load Fail");
+        } else {
+            var currentYear = new Date().getFullYear();
+            $('#footer #currentYear').text(currentYear);
+        }
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const ipElements = document.querySelectorAll('.ip');
+
+    ipElements.forEach(ipElem => {
+        const ipAddress = ipElem.textContent.trim();
+        const parentRow = ipElem.closest('tr');
+        const speedDisplay = parentRow.querySelector('.speed');
+
+        const isIPv6 = /^([a-fA-F0-9:]+:+)+[a-fA-F0-9]+$/.test(ipAddress);
+        const formattedIP = isIPv6 ? `[${ipAddress}]` : ipAddress;
+        const protocol = window.location.protocol === 'https:' ? 'https://' : 'http://';
+        const testURL = `${protocol}${formattedIP}/favicon.ico?r=${Math.random()}`;
+
+        const startTime = performance.now();
+        speedDisplay.textContent = 'Loading...';
+
+        const img = new Image();
+        let isLoaded = false;
+
+        const timeoutId = setTimeout(() => {
+            if (!isLoaded) {
+                isLoaded = true;
+                speedDisplay.textContent = 'Timeout';
+                console.warn(`Request timed out for ${ipAddress}`);
+            }
+        }, 5000);
+
+        img.onload = img.onerror = () => {
+            if (isLoaded) return;
+            clearTimeout(timeoutId);
+            isLoaded = true;
+            const latency = Math.round(performance.now() - startTime);
+            speedDisplay.textContent = `${latency} ms`;
+        };
+
+        img.src = testURL;
+    });
+});
+</script>
+<div id="scrollTop" title="Back to top">TOP</div>
+<script>
+const scrollTopBtn = document.getElementById("scrollTop");
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+window.addEventListener('scroll', () => {
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollPosition > 0) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+</script>
+</body>
+</html>
